@@ -570,16 +570,21 @@ class AudiobookAlbum(Agent.Album):
 
 		# Add the genres
         metadata.genres.clear()
-        metadata.genres.add(series)
+        metadata.genres.add(genre1)
+        metadata.genres.add(genre2)
+
         narrators_list = narrator.split(",")
         for narrators in narrators_list:
             metadata.genres.add(narrators)
-        metadata.genres.add(genre1)
-        metadata.genres.add(genre2)
-		
-		# other metadata
+
+        # add series for filtering (search not supported)
+        if Prefs['stash_series']:
+            metadata.studio = series
+        else:
+            metadata.genres.add(series)
+
+        # other metadata
         metadata.title = title
-        metadata.studio = studio
         metadata.summary = synopsis
         metadata.posters[1] = Proxy.Media(HTTP.Request(thumb))
         metadata.posters.validate_keys(thumb)
