@@ -576,7 +576,7 @@ class AudiobookAlbum(Agent.Album):
         # Store narrators seperately as producers
 		# not currently shown in UI, could also use: tags, countries
         metadata.producers.clear()
-        narrators_list = narrator.split(",")
+        narrators_list = [item.strip() for item in narrator.split(",")]
         for narrators in narrators_list:
             metadata.producers.add(narrators)
             # optionally show narrators as genre tags
