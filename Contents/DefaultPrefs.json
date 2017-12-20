@@ -14,6 +14,11 @@
     "type": "bool",
     "default": "true"
 },{
+    "id": "stash_narrators",
+    "label": "Stash narrators string into title_sort (for searching)",
+    "type": "bool",
+    "default": "true"
+},{
     "id": "narrators_to_genre",
     "label": "Append narrators onto genres (for filtering)",
     "type": "bool",

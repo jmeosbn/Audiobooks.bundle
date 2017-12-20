@@ -583,6 +583,10 @@ class AudiobookAlbum(Agent.Album):
             if Prefs['narrators_to_genre']:
                 metadata.genres.add(narrators)
 
+        # Add (multi-persons) narrator string for searching
+        if Prefs['stash_narrators']:
+            metadata.title_sort = ', '.join(narrators_list)
+
         # add series for filtering (search not supported)
         if Prefs['stash_series']:
             metadata.studio = series
