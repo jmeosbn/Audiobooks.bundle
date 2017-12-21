@@ -579,6 +579,9 @@ class AudiobookAlbum(Agent.Album):
         narrators_list = narrator.split(",")
         for narrators in narrators_list:
             metadata.producers.add(narrators)
+            # optionally show narrators as genre tags
+            if Prefs['narrators_to_genre']:
+                metadata.genres.add(narrators)
 
         # add series for filtering (search not supported)
         if Prefs['stash_series']:

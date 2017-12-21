@@ -14,6 +14,11 @@
     "type": "bool",
     "default": "true"
 },{
+    "id": "narrators_to_genre",
+    "label": "Append narrators onto genres (for filtering)",
+    "type": "bool",
+    "default": "false"
+},{
 	"id": "debug",
 	"label": "Ouput debugging info in logs",
 	"type": "bool",
